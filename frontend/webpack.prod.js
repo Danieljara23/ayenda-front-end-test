@@ -4,9 +4,5 @@ const path = require('path');
 
 module.exports = merge(webpackConfig, {
     mode:'production',
-    "output": {
-        "path": path.resolve(__dirname, 'public/js/'),
-        "publicPath": "/",
-        "filename": "bundle.js"
-     }
+   
 });

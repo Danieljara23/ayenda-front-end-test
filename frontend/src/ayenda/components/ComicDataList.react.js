@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import ComicData from './ComicData.react';
 const ComicDataList = (props) => {

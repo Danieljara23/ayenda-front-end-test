@@ -8,10 +8,11 @@
  module.exports = {
      "entry": "./src/index.js",
      "output": {
-        "path": path.resolve(__dirname, 'static/js/'),
-        "publicPath": "/",
-        "filename": "bundle.js"
-     },module: {
+      "path": path.resolve(__dirname, 'public/js/'),
+      "publicPath": "/",
+      "clean": true,
+      "filename": "bundle.js"
+   },module: {
       rules: [
           {  test: /\.jsx?$/, 
              exclude: /node_modules/,

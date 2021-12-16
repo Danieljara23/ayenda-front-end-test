@@ -27,8 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "dev-watch": "webpack --watch --config  webpack.dev.js",
-    "build": "react-scripts build",
-    "build-local": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "jest"
   },
   "jest": {

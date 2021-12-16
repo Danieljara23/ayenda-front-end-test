@@ -25,7 +25,7 @@ const FilterComponent = (props) => {
                         </div>
                     }
                 </div>
-                <ul class="list-group list-group-flush">
+                <ul className="list-group list-group-flush">
                     {
                         Object.keys(props.characters).map((item, i) => {
                             return <li key={i} className="list-group-item btn text-start" onClick={props.showComicsByCharacterId(item, props.characters[item])}>{props.characters[item]}</li>

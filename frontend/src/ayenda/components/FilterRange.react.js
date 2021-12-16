@@ -10,11 +10,11 @@ const FilterRangeComponent = (props) => {
         }
 
         return <div>
-        <label class="form-label">Buscar por rango</label>
-                <div class="input-group mb-3">
-        <input type="text" ref={start_year} class="form-control" placeholder="ej: 2005" aria-label="año inicio" />
-        <span class="input-group-text">a</span>
-        <input type="text" ref={end_year} class="form-control" placeholder="ej: 2010" aria-label="año final" />
+        <label className="form-label">Buscar por rango</label>
+                <div className="input-group mb-3">
+        <input type="text" ref={start_year} className="form-control" placeholder="ej: 2005" aria-label="año inicio" />
+        <span className="input-group-text">a</span>
+        <input type="text" ref={end_year} className="form-control" placeholder="ej: 2010" aria-label="año final" />
         <a className="btn btn-danger" onClick={handleFilterRange}>Buscar</a>
         </div>
         

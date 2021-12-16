@@ -159,10 +159,11 @@ class AppComponent extends React.Component {
                   activePage={activePage}
                   itemsCountPerPage={itemPerPage}
                   totalItemsCount={total}
-                  
+                  pageRangeDisplayed={10}
                   activeLinkClass="bg-light text-dark"
                   pageRangeDisplayed={COMICS_COUNT}
-                  itemClass="page-item"
+                  innerClass="pagination d-flex flex-row flex-wrap"
+                  itemClass="page-item d-flex"
                   linkClass="page-link"
                   onChange={this.handlePageChange}
                 />}

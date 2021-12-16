@@ -17,9 +17,9 @@ const DataCard = ({ id, title, img, prices, creators }) => (
       <div className='card-body'>
         <div className='card-img' style={{ backgroundImage: `url(${img.path}.${img.extension})` }} />
         <div className='card-title'>{title}</div>
-        {creators.items.length > 0 ? <h6 class="card-subtitle mb-2 text-muted">{creators.items[0].name}</h6>:''}
+        {creators.items.length > 0 ? <h6 className="card-subtitle mb-2 text-muted">{creators.items[0].name}</h6>:''}
       </div>
-      <div class="card-footer bg-transparent border-top-0"><a href="#" className="btn btn-danger btn-sm float-end">{prices[0].price} USD</a></div>
+      <div className="card-footer bg-transparent border-top-0"><a href="#" className="btn btn-danger btn-sm float-end">{prices[0].price} USD</a></div>
     </div>
 )
 

@@ -6,7 +6,6 @@ import browser from './mock/browser'
 import {render, fireEvent, waitFor, screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import App from '../ayenda/App'
-import JobComponent from '../torre/components/Job.react'
 import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -36,7 +35,7 @@ describe("loading status", ()=>{
     expect(screen.getByText(/Marvel app error/i)).toBeInTheDocument()
   });
   
-  test('render no job data',async ()=> {
+  test('render no comics data',async ()=> {
     render(<Provider store={store}>
           <App />
         </Provider>

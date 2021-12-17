@@ -1,0 +1,67 @@
+@import "~bulma/bulma";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#container-movies {
+  padding: 20px;
+}
+
+.List-container{
+  width: 1200px;
+}
+
+#input-search {
+  width: 600px;
+  position: sticky;
+}
+
+.tags-content{
+  width: 700px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+figure {
+  width: 100%;
+}
+
+.content-item  {
+  border: 1px solid black;
+  border-radius: 10px;
+  div{
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.content-item:hover{
+  box-shadow: 0 0 16px 8px;
+  background: rgb(12 82 52 / 0%);
+
+}
+
+@media (max-width: 1000px) {
+  .List-container {
+   padding: 0 20px;
+    margin: 0 0 0 0 !important;
+    width: 100%;
+  }
+
+  #input-search {
+    width: 100%;
+    position: sticky;
+  }
+
+  .tags-content{
+    width: 100%;
+
+  }
+}

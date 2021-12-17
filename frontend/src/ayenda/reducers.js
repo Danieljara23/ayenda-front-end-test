@@ -30,7 +30,7 @@ const filterState = {
 }
 
 export const filterReducer = (state = filterState, action) =>{
-    console.log(action);
+    
     if (typeof state === 'undefined'){
         state = { characters: {},     current: null}
     }
@@ -91,7 +91,7 @@ export const userReducer = (state = userState, action) => {
 
     switch(action.type){
         case TYPE.SET_USER_DATA_RESULT:
-            console.log("userReducer");
+            
             return Object.assign({}, state,{
                 user: action.payload.user,
                 userPersonalTrait: action.payload.user.personalityTraitsResults

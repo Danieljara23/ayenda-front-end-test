@@ -21,7 +21,7 @@
   
   
 ## Content
-  - **UI**: The Comic's store usee [Marvel's API](https://developer.marvel.com/docs)   
+  - **UI**: The Comic's store use [Marvel's API](https://developer.marvel.com/docs)   
   - **Show a List of comics**: List the comics that the API returns when you request to the `/v1/public/comics` endpoint.
   - **Include a search field**: When the user type this input field, the comics are updated based on the user entry.
   - **Filters**: When user clicks on it, you should show only the comics where this character appears.

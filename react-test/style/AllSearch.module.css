@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+
+.search {
+    width: 80%;
+    max-width: 500px;
+    height: 50px;
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.19);
+    border-radius: 5px 5px 5px 5px;
+    font-family: 'Montserrat', sans-serif;
+};
+
+.search:focus {
+    border: 1px solid rgba(0, 0, 0, 0.623);
+}
+
+@media (max-width: 600px) {
+    .search {
+        height: 30px;
+        margin: 0;
+    }
+  }

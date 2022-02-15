@@ -12,7 +12,7 @@ import { useGetComics } from "../customHooks/useGetComics";
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
-  const { comics, getComicsDataByName, getComicsDataByFilter } = useGetComics();
+  const { comics, loading, getComicsDataByName, getComicsDataByFilter } = useGetComics();
 
   const getDataByFilter = (id) => {
     getComicsDataByFilter(id);
@@ -37,7 +37,7 @@ const Home = () => {
         filters={data.filters} 
         applyFilter={getDataByFilter} 
       />
-      <CardsList comics={comics} />
+      <CardsList comics={comics} loading={loading} />
     </>
   )
 }

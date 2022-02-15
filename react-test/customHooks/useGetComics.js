@@ -7,19 +7,20 @@ const apiKey = '12b9a96106dbadb12246ce164d96aff4'
 
 export const useGetComics = () => {
   const [comics, setComics] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getComicsData();
   }, [])
   
   const getComicsData = async () => {
-    const comicsData = await apiFetch(`${url}apikey=${apiKey}`)
+    const comicsData = await loadingWrapper(`${url}apikey=${apiKey}`)
     setComics(formatComicsData(comicsData));
   }
   
   const getComicsDataByName = async (name) => {
     if (!!name) {
-      const comicsData = await apiFetch(`${url}apikey=${apiKey}&titleStartsWith=${name}`)
+      const comicsData = await loadingWrapper(`${url}apikey=${apiKey}&titleStartsWith=${name}`)
       setComics(formatComicsData(comicsData));
     } else {
       getComicsData();
@@ -27,9 +28,16 @@ export const useGetComics = () => {
   } 
 
   const getComicsDataByFilter = async (characterId) => {
-    const comicsData = await apiFetch(`${url}characters=${characterId}&apikey=${apiKey}`)
+    const comicsData = await loadingWrapper(`${url}characters=${characterId}&apikey=${apiKey}`)
     setComics(formatComicsData(comicsData));
-  } 
+  }
+  
+  const loadingWrapper = async (url) => {
+    setLoading(true);
+    const response = await apiFetch(url);
+    setLoading(false);
+    return response;
+  }
 
-  return { comics, getComicsDataByName, getComicsDataByFilter }
+  return { comics, loading, getComicsDataByName, getComicsDataByFilter }
 }

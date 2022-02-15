@@ -12,9 +12,10 @@ import { useGetComics } from "../customHooks/useGetComics";
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
-  const { comics, getComicsDataByName } = useGetComics();
+  const { comics, getComicsDataByName, getComicsDataByFilter } = useGetComics();
+
   const getDataByFilter = (id) => {
-    console.log(id);
+    getComicsDataByFilter(id);
   }
 
   const handleSearchBarChange = (value) => {

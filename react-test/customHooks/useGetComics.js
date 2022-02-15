@@ -26,5 +26,10 @@ export const useGetComics = () => {
     }
   } 
 
-  return { comics, getComicsDataByName }
+  const getComicsDataByFilter = async (characterId) => {
+    const comicsData = await apiFetch(`${url}characters=${characterId}&apikey=${apiKey}`)
+    setComics(formatComicsData(comicsData));
+  } 
+
+  return { comics, getComicsDataByName, getComicsDataByFilter }
 }

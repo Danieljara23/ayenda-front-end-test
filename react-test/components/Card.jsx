@@ -1,3 +1,5 @@
+import { createCreatorsText } from '../helpers/createCreatorsText';
+
 const Card = ({
   name,
   image,
@@ -10,7 +12,7 @@ const Card = ({
         <img className="card__image" src={image} alt={name} />
       </header>
       <h3 className="card__tilte">{name}</h3>
-      <p className="card__text">{creators}</p>
+      <p className="card__text">{createCreatorsText(creators)}</p>
       <footer className="card__footer">
         <p className="card__tag">{price} USD</p>
       </footer>

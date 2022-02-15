@@ -3,9 +3,9 @@ export const createCreatorsText = (creators) => {
     let creatorsText = '';
     creators.items.forEach((creator, index) => {
       if ((creators.items.length - 1) === index) {
-        creatorsText = `${creator.name}`;
+        creatorsText = creatorsText + `${creator.name}`;
       } else {
-        creatorsText = `${creator.name}, `;
+        creatorsText = creatorsText + `${creator.name}, `;
       }
     })
     return creatorsText;

@@ -1,7 +1,11 @@
 const SearchBar = ({ value, onChange }) => {
   return (
     <section className="search-bar">
-      <img src="./search-icon.svg" className="search-bar__icon"/>
+      <img 
+        className="search-bar__icon"
+        src="./search-icon.svg" 
+        alt="search icon"
+      />
       <input
         className="search-bar__input" 
         value={value} 

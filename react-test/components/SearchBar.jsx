@@ -9,7 +9,7 @@ const SearchBar = ({ value, onChange }) => {
       <input
         className="search-bar__input" 
         value={value} 
-        onChange={onChange} 
+        onChange={({ target }) => onChange(target.value)} 
       />
     </section>
   )

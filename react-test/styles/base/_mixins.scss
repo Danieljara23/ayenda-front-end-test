@@ -9,3 +9,9 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+@mixin grid-layout($minWidth, $gridGap) {
+  display: grid;
+  grid-gap: $gridGap;
+  grid-template-columns: repeat(auto-fill, minmax($minWidth, 1fr));
+}

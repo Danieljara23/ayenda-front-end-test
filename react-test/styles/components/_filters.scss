@@ -1,7 +1,6 @@
 .filters {
   @include flex-center;
   flex-wrap: wrap;
-  width: 100vw;
 
   &__button {
     background-color: $primary-color;

@@ -12,7 +12,7 @@ const Home = () => {
   const getDataByFilter = (id) => {
     console.log(id);
   }
-  console.log(comics);
+
   return (
     <>
       <Header />

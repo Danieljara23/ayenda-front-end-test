@@ -11,9 +11,9 @@ const Card = ({
       <header className="card__header">
         <img className="card__image" src={image} alt={name} />
       </header>
-      <h3 className="card__tilte">{name}</h3>
-      <p className="card__text">{createCreatorsText(creators)}</p>
       <footer className="card__footer">
+        <h3 className="card__title">{name}</h3>
+        <p className="card__text">{createCreatorsText(creators)}</p>
         <p className="card__tag">{price} USD</p>
       </footer>
     </article>

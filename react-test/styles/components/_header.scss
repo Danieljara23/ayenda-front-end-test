@@ -1,0 +1,10 @@
+.header {
+  @include flex-left;
+  height: 50px;
+  background-color: $primary-color;
+  padding: 0 20px;
+
+  &__title {
+    color: white;
+  }
+}

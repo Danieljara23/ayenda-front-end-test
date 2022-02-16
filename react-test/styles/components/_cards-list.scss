@@ -1,0 +1,8 @@
+.cards-list {
+  @include grid-layout(300px, 30px);
+  padding: 20px 0;
+  
+  @media (min-width: 830px) {
+    padding: 20px 100px;
+  }
+}

@@ -1,0 +1,14 @@
+.filters {
+  @include flex-center;
+  flex-wrap: wrap;
+
+  &__button {
+    background-color: $primary-color;
+    color: $white;
+    font-size: 2rem;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+  }
+}

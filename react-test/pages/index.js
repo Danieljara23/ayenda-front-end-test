@@ -1,36 +1,21 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "../style/Home.module.css";
-import { formatPrice } from "../components/FormatPrice";
 import { AllSearch } from "../components/AllSearch";
 import { Filters } from "../components/Filters";
 import { Header } from "../components/Header";
+import { Cards } from "../components/Cards";
 import { Footer } from "../components/Footer";
-
-const defaultEndPoint =
-  "https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=717174d03db4fafc2db6e81ab37e5a20&hash=464cfe846f37a492d924ef2df3167ad2";
+import { apiFetch } from "../helpers/apiFetch";
 
 export async function getServerSideProps() {
-  const res = await fetch(defaultEndPoint);
-  const data = await res.json();
+  let data = await apiFetch();
   return { props: { data } };
 }
 
 export default function Home({ data }) {
   const { results = [] } = data.data;
   const [searchValue, setSearchValue] = useState("");
-
-  let searchedComics = [];
-
-  if (!searchValue.length >= 1) {
-    searchedComics = results;
-  } else {
-    searchedComics = results.filter((comic) => {
-      const comicText = comic.title.toLowerCase();
-      const searchText = searchValue.toLowerCase();
-      return comicText.includes(searchText);
-    });
-  }
 
   return (
     <>
@@ -47,48 +32,7 @@ export default function Home({ data }) {
         <Filters searchValue={searchValue} setSearchValue={setSearchValue} />
       </section>
 
-      <main className={styles.main}>
-        <ul className={styles.grid}>
-          {searchedComics.map((result) => {
-            const { id, title, thumbnail, creators, prices } = result;
-            const cover = thumbnail.path + "." + thumbnail.extension;
-            const price = formatPrice(prices[0].price);
-            const creator = creators.items;
-
-            const isWriter = creator.find((writer) => {
-              return writer.role === "writer";
-            });
-
-            let nameWriter = [];
-            let voidWriter = [];
-            if (isWriter) {
-              nameWriter.push(isWriter.name);
-            } else {
-              voidWriter.push("Jon Doe");
-            }
-
-            return (
-              <li key={id} className={styles.card}>
-                <div className={styles.containerimg}>
-                  <img
-                    src={cover}
-                    alt={title}
-                    className={styles.coverimage}
-                  ></img>
-                </div>
-                <h2>{title}</h2>
-
-                <p>
-                  {nameWriter}
-                  {voidWriter}
-                </p>
-
-                <button>{price}</button>
-              </li>
-            );
-          })}
-        </ul>
-      </main>
+      <Cards results={results} searchValue={searchValue} />
 
       <Footer />
     </>

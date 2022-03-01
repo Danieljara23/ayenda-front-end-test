@@ -6,7 +6,7 @@ export function Filters ({searchValue, setSearchValue}) {
     }
 
     return (
-    <ul className={styles.container}>
+    <nav className={styles.container}>
       <button 
         type='submit' 
         className={styles.button}
@@ -34,6 +34,6 @@ export function Filters ({searchValue, setSearchValue}) {
         X-men
       </button>  
 
-    </ul>
+    </nav>
   );
 };
